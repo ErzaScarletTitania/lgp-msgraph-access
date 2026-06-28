@@ -6,6 +6,19 @@ This project is a small Python CLI for authenticating with Microsoft Graph and b
 
 That is the value of this repo as a showcase: **taking a blocked enterprise access problem, using AI to accelerate investigation and iteration, and turning browser-only access into a working developer tool and automation path.**
 
+## Linked integration
+
+This repository is integrated into:
+
+- `https://github.com/ErzaScarletTitania/g-connect-testing-agent`
+
+In that framework it is consumed as the OneDrive/SharePoint intake wrapper via:
+
+- `scripts\onedrive-intake.cmd`
+- `scripts\extract-onedrive-testing-entries.cmd`
+
+The testing framework uses this tool to discover meeting-minutes artifacts and extract testing runtime inputs (for example IPs, ports, endpoints, and credentials) into plugin environment planning artifacts.
+
 ## Why this stands out
 
 - **Real Microsoft Graph integration** with delegated auth, token caching, and refresh.
