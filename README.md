@@ -189,6 +189,28 @@ download_file("<item-id>", "./downloads")
 - Do not publish real tenant links, file IDs, downloaded customer files, or credentials.
 - If you make this repo public, keep all examples sanitized.
 
+## Runtime troubleshooting (Graph / OneDrive)
+
+### Incident: 2026-07-06 (GSIM 13 installer download)
+
+While downloading the new GSIM 13 installer, token refresh succeeded, but the
+runtime path that depends on `/me/drive/sharedWithMe` failed with `403` in this
+tenant context (`provisioningNotAllowed` / access denied under `/me` drive
+resolution).
+
+### Correct recovery path
+
+When `/me/drive/sharedWithMe` is blocked, use an alternate Graph route that does
+not depend on that endpoint:
+
+1. Resolve accessible document libraries with `GET /sites/root/drives`.
+2. Search files using `POST /search/query` (entity type `driveItem`) or
+   `GET /drives/{drive-id}/root/search(q='...')`.
+3. Download with `GET /drives/{drive-id}/items/{item-id}/content`.
+
+This is the path that successfully located and downloaded
+`G-SIM_Installer_13_0_0+11.zip` during the 2026-07-06 runtime issue.
+
 ## File structure
 
 ```text
