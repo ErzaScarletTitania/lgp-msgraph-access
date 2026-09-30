@@ -1,4 +1,4 @@
-# ms-graph-auth
+# LGP Microsoft Graph Access
 
 **A Microsoft Graph automation tool built to turn browser-only access to shared OneDrive / SharePoint content into programmable access when tenant constraints block the normal API path.**
 
@@ -10,7 +10,7 @@ That is the value of this repo as a showcase: **taking a blocked enterprise acce
 
 This repository is integrated into:
 
-- `https://github.com/ErzaScarletTitania/g-connect-testing-agent`
+- `https://github.com/ErzaScarletTitania/lgp-qa-orchestration-legacy`
 
 In that framework it is consumed as the OneDrive/SharePoint intake wrapper via:
 
